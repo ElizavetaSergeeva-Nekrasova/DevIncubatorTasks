@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="41b1eee7-d1d0-4959-8708-f62dad5d4b10" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/by/incubator/task1/HiddenAgent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/by/incubator/task1/MyClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -75,6 +74,7 @@
       <option name="presentableId" value="Default" />
       <updated>1655805299747</updated>
       <workItem from="1655805300883" duration="3835000" />
+      <workItem from="1655816174168" duration="199000" />
     </task>
     <servers />
   </component>

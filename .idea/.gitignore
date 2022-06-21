@@ -1,4 +1,9 @@
 # Intellij
-.idea/
+
+/.idea/
+
+/out/
+
+src/
+
 *.iml
-*.iws
