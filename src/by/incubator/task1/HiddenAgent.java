@@ -9,13 +9,13 @@ public class HiddenAgent {
         System.out.println ("Its parent: " + hiddenAgentClassLoader.getParent());
         System.out.println ("Parent of its parent: " + hiddenAgentClassLoader.getParent().getParent());
 
-        System.out.println ("---------------------------------------------------");
+        System.out.println ("----------------------------------------------------");
 
         Class <Integer> integerClass = Integer.class;
         ClassLoader integerClassLoader = integerClass.getClassLoader();
         System.out.println ("Class loader of Integer class: " + integerClassLoader);
 
-        System.out.println ("---------------------------------------------------");
+        System.out.println ("----------------------------------------------------");
 
         Class <MyClass> myClassClass = MyClass.class;
         ClassLoader myClassClassLoader = myClassClass.getClassLoader();
