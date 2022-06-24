@@ -34,8 +34,6 @@ public class TextProcessor {
             text = scanner.nextLine();
         }
 
-        scanner.close();
-
         String result = reverse(text);
 
         System.out.println(result);
@@ -63,8 +61,6 @@ public class TextProcessor {
         if (scanner.hasNext()) {
             text = scanner.nextLine();
         }
-
-        scanner.close();
 
         int dotPosition = text.indexOf('.');
         if (dotPosition > 0) {
