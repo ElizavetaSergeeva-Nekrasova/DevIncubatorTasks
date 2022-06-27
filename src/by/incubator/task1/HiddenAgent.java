@@ -4,24 +4,26 @@ public class HiddenAgent {
     public static void main(String[] args) {
 
         Class <HiddenAgent> hiddenAgentClass = HiddenAgent.class;
-        ClassLoader hiddenAgentClassLoader = hiddenAgentClass.getClassLoader();
-        System.out.println ("Class loader of HiddenAgent class: " + hiddenAgentClassLoader);
-        System.out.println ("Its parent: " + hiddenAgentClassLoader.getParent());
-        System.out.println ("Parent of its parent: " + hiddenAgentClassLoader.getParent().getParent());
-
-        System.out.println ("----------------------------------------------------");
+        showInfoAboutClassLoaderAndHisParents(hiddenAgentClass);
 
         Class <Integer> integerClass = Integer.class;
-        ClassLoader integerClassLoader = integerClass.getClassLoader();
-        System.out.println ("Class loader of Integer class: " + integerClassLoader);
-
-        System.out.println ("----------------------------------------------------");
+        showInfoAboutClassLoader(integerClass);
 
         Class <MyClass> myClassClass = MyClass.class;
-        ClassLoader myClassClassLoader = myClassClass.getClassLoader();
-        System.out.println ("Class loader of MyClass class: " + myClassClassLoader);
-        System.out.println ("Its parent: " + myClassClassLoader.getParent());
-        System.out.println ("Parent of its parent: " + myClassClassLoader.getParent().getParent());
-
+        showInfoAboutClassLoaderAndHisParents(myClassClass);
     }
-}
+
+    private static void showInfoAboutClassLoader (Class classObject) {
+        ClassLoader classLoader = classObject.getClassLoader();
+        System.out.println("Class loader of " + classObject + ": " +classLoader);
+        System.out.println ("----------------------------------------------------");
+    }
+
+    private static void showInfoAboutClassLoaderAndHisParents (Class classObject) {
+        ClassLoader classLoader = classObject.getClassLoader();
+        System.out.println("Class loader of " + classObject + ": " +classLoader);
+        System.out.println ("Its parent: " + classLoader.getParent());
+        System.out.println ("Parent of its parent: " + classLoader.getParent().getParent());
+        System.out.println ("----------------------------------------------------");
+    }
+ }
