@@ -18,7 +18,7 @@ public class DisplayWeekDay {
     public static int readNumber() {
         int number = 0;
 
-        System.out.println("Enter the day number: ");
+        System.out.println ("Enter the day number: ");
         Scanner scanner = new Scanner (System.in);
         if (scanner.hasNextInt()) {
             number = scanner.nextInt();
@@ -38,11 +38,11 @@ public class DisplayWeekDay {
             case 4:
                 return getDescriptionFromEnum (DaysOfWeek.THURSDAY);
             case 5:
-                return getDescriptionFromEnum(DaysOfWeek.FRIDAY);
+                return getDescriptionFromEnum (DaysOfWeek.FRIDAY);
             case 6:
-                return getDescriptionFromEnum(DaysOfWeek.SATURDAY);
+                return getDescriptionFromEnum (DaysOfWeek.SATURDAY);
             case 7:
-                return getDescriptionFromEnum(DaysOfWeek.SUNDAY);
+                return getDescriptionFromEnum (DaysOfWeek.SUNDAY);
             default: return null;
 
         }
