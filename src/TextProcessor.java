@@ -39,7 +39,7 @@ public class TextProcessor {
 
     }
 
-    public static String reverse(String text) {
+    private static String reverse(String text) {
 
         char[] textArray = new char[text.length()];
 
@@ -72,7 +72,7 @@ public class TextProcessor {
         return result;
     }
 
-    public static String deleteSpaces(String text, int spaceCount) {
+    private static String deleteSpaces(String text, int spaceCount) {
 
         char[] resultArray = new char[text.length() - spaceCount];
 
@@ -87,7 +87,7 @@ public class TextProcessor {
         return result;
     }
 
-    public static int countSpaces(String text) {
+    private static int countSpaces(String text) {
         int counter = 0;
 
         for (int i = 0; i < text.length(); i++) {
@@ -133,7 +133,7 @@ public class TextProcessor {
         return arrayOfStrings;
     }
 
-    public static int readArrayLength() {
+    private static int readArrayLength() {
         int arrayLength = 0;
 
         System.out.println("Enter array length: ");
@@ -145,7 +145,7 @@ public class TextProcessor {
         return arrayLength;
     }
 
-    public static String[] readStringArray(int arrayLength) {
+    private static String[] readStringArray(int arrayLength) {
         String[] arrayOfStrings = new String[arrayLength];
 
         System.out.println("Enter the words line by line: ");
@@ -165,7 +165,7 @@ public class TextProcessor {
         return arrayOfStrings;
     }
 
-    public static void editStringArray(String[] array) {
+    private static void editStringArray(String[] array) {
 
         for (int i = 0; i < array.length; i++) {
             array[i] = (array[i] == null) ? ("String is empty") : (array[i]);

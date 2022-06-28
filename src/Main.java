@@ -1,10 +1,10 @@
 public class Main {
-    static String example = "Hello, user! How are you?";
+    private static String example = "Hello, user! How are you?";
 
-    static String str1 = "Java";
-    static String str2 = "JAVA";
-    static String str3 = "C#";
-    static String str4 = "Java";
+    private static String str1 = "Java";
+    private static String str2 = "JAVA";
+    private static String str3 = "C#";
+    private static String str4 = "Java";
 
     public static void main(String[] args) {
         testTextProcessorMethods();
