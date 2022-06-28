@@ -1,3 +1,5 @@
+package by.incubator.task3;
+
 public class Main {
     private static String example = "Hello, user! How are you?";
     private static String str1 = "Java";
