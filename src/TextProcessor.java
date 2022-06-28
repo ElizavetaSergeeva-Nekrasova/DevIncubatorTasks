@@ -2,25 +2,25 @@ import java.util.Scanner;
 
 public class TextProcessor {
 
-    public static String appendText (String text, String append) {
+    public static String appendText(String text, String append) {
         String result = text + append;
         return result;
     }
 
-    public static String insertText (String text, String insert, int position) {
+    public static String insertText(String text, String insert, int position) {
         String result =
                 text.substring(0, position) + insert + text.substring(position, text.length());
         return result;
     }
 
-    public static String removeCharacter (String text, char character) {
+    public static String removeCharacter(String text, char character) {
         int position = text.indexOf(character);
         String result =
                 text.substring(0, position) + text.substring(position + 1, text.length());
         return result;
     }
 
-    public static String replaceSubstring (String text, String oldSubstring, String newSubstring) {
+    public static String replaceSubstring(String text, String oldSubstring, String newSubstring) {
         String result = text.replace(oldSubstring, newSubstring);
         return result;
     }
@@ -40,12 +40,12 @@ public class TextProcessor {
 
     }
 
-    public static String reverse (String text) {
+    public static String reverse(String text) {
 
         char[] textArray = new char[text.length()];
 
         for (int i = 0; i < textArray.length; i++) {
-            textArray[i] = text.charAt(text.length()- (i + 1));
+            textArray[i] = text.charAt(text.length() - (i + 1));
         }
 
         String result = new String(textArray);
@@ -73,7 +73,7 @@ public class TextProcessor {
         return result;
     }
 
-    public static String deleteSpaces (String text, int spaceCount) {
+    public static String deleteSpaces(String text, int spaceCount) {
 
         char[] resultArray = new char[text.length() - spaceCount];
 
@@ -88,7 +88,7 @@ public class TextProcessor {
         return result;
     }
 
-    public static int countSpaces (String text) {
+    public static int countSpaces(String text) {
         int counter = 0;
 
         for (int i = 0; i < text.length(); i++) {
@@ -100,7 +100,7 @@ public class TextProcessor {
         return counter;
     }
 
-    public static String outputUppercase (String text) {
+    public static String outputUppercase(String text) {
         StringBuilder textStringBuilder = new StringBuilder();
 
         for (int i = 0; i < text.length(); i++) {
@@ -114,7 +114,7 @@ public class TextProcessor {
         return result;
     }
 
-    public static String uppercaseEvenLetters (String text) {
+    public static String uppercaseEvenLetters(String text) {
         StringBuilder textStringBuilder = new StringBuilder();
 
         for (int i = 1; i < text.length(); i = i + 2) {
@@ -157,8 +157,7 @@ public class TextProcessor {
 
                 if (word.equals("")) {
                     arrayOfStrings[i] = null;
-                }
-                else {
+                } else {
                     arrayOfStrings[i] = word;
                 }
             }

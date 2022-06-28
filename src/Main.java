@@ -14,53 +14,53 @@ public class Main {
     private static void testTextProcessorMethods() {
         String result = null;
 
-        System.out.println ("Original phrase: " + example);
+        System.out.println("Original phrase: " + example);
 
-        result = TextProcessor.appendText (example, "Fine!");
-        System.out.println ("result of appendText(): " + result);
+        result = TextProcessor.appendText(example, "Fine!");
+        System.out.println("result of appendText(): " + result);
 
-        result = TextProcessor.insertText (example, "dear", 6);
-        System.out.println ("result of insertText(): " + result);
+        result = TextProcessor.insertText(example, "dear", 6);
+        System.out.println("result of insertText(): " + result);
 
-        result = TextProcessor.removeCharacter (example, '!');
-        System.out.println ("result of removeCharacter(): " + result);
+        result = TextProcessor.removeCharacter(example, '!');
+        System.out.println("result of removeCharacter(): " + result);
 
-        result = TextProcessor.replaceSubstring (example, "user", "programmer");
-        System.out.println ("result of replaceSubstring(): " + result);
+        result = TextProcessor.replaceSubstring(example, "user", "programmer");
+        System.out.println("result of replaceSubstring(): " + result);
 
-        System.out.println ("testing readAndReverse() method: ");
+        System.out.println("testing readAndReverse() method: ");
         TextProcessor.readAndReverse();
 
-        System.out.println ("testing readAndDeleteSpaces() method: ");
+        System.out.println("testing readAndDeleteSpaces() method: ");
         result = TextProcessor.readAndDeleteSpaces();
-        System.out.println ("result of readAndDeleteSpaces(): " + result);
+        System.out.println("result of readAndDeleteSpaces(): " + result);
 
-        result = TextProcessor.outputUppercase ("YY d dI S P AAAa aa AAA aaA");
-        System.out.println ("result of outputUppercase(), original phrase was 'YY d dI S P AAAa aa AAA aaA': " + result);
+        result = TextProcessor.outputUppercase("YY d dI S P AAAa aa AAA aaA");
+        System.out.println("result of outputUppercase(), original phrase was 'YY d dI S P AAAa aa AAA aaA': " + result);
 
-        result = TextProcessor.uppercaseEvenLetters ("Friends");
-        System.out.println ("result of uppercaseEvenLetters(), original phrase was 'Friends': " + result);
+        result = TextProcessor.uppercaseEvenLetters("Friends");
+        System.out.println("result of uppercaseEvenLetters(), original phrase was 'Friends': " + result);
 
-        System.out.println ("testing readAndEditStringArray() method: ");
+        System.out.println("testing readAndEditStringArray() method: ");
         String[] array = TextProcessor.readAndEditStringArray();
-        System.out.println ("result of readAndEditStringArray(): ");
-        for (String s:
+        System.out.println("result of readAndEditStringArray(): ");
+        for (String s :
                 array) {
-            System.out.println (s);
+            System.out.println(s);
         }
     }
 
     private static void showEqualsResult() {
-        System.out.println("str1.equals(str2): " + str1.equals (str2));
-        System.out.println("str1.equals(str3): " + str1.equals (str3));
-        System.out.println("str1.equals(str4): " + str1.equals (str4));
-        System.out.println("str2.equals(str3): " + str2.equals (str3));
-        System.out.println("str2.equals(str4): " + str2.equals (str4));
-        System.out.println("str3.equals(str4): " + str3.equals (str4));
+        System.out.println("str1.equals(str2): " + str1.equals(str2));
+        System.out.println("str1.equals(str3): " + str1.equals(str3));
+        System.out.println("str1.equals(str4): " + str1.equals(str4));
+        System.out.println("str2.equals(str3): " + str2.equals(str3));
+        System.out.println("str2.equals(str4): " + str2.equals(str4));
+        System.out.println("str3.equals(str4): " + str3.equals(str4));
 
         System.out.println("----------------------");
 
-        System.out.println("str1.equalsIgnoreCase(str2): " + str1.equalsIgnoreCase (str2));
+        System.out.println("str1.equalsIgnoreCase(str2): " + str1.equalsIgnoreCase(str2));
 
         System.out.println("----------------------");
 
