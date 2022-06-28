@@ -19,7 +19,7 @@ public enum DaysOfWeek {
     private String abbreviation;
     private boolean isWeekend;
 
-    private DaysOfWeek (String abbreviation, boolean isWeekend) {
+    private DaysOfWeek(String abbreviation, boolean isWeekend) {
         this.abbreviation = abbreviation;
         this.isWeekend = isWeekend;
     }
