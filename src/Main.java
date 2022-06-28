@@ -13,7 +13,7 @@ public class Main {
         MonitoringSystem generalIndicatorsMonitoringModule = new MonitoringSystem() {
             @Override
             public void startMonitoring() {
-                System.out.println ("Monitoring of general indicators has started!");
+                System.out.println("Monitoring of general indicators has started!");
             }
         };
 
@@ -24,7 +24,7 @@ public class Main {
         MonitoringSystem errorMonitoringModule = new MonitoringSystem() {
             @Override
             public void startMonitoring() {
-                System.out.println ("Bug tracking monitoring has started!");
+                System.out.println("Bug tracking monitoring has started!");
             }
         };
 
@@ -35,7 +35,7 @@ public class Main {
         MonitoringSystem securityModule = new MonitoringSystem() {
             @Override
             public void startMonitoring() {
-                System.out.println ("Security monitoring has started!");
+                System.out.println("Security monitoring has started!");
             }
         };
 
