@@ -1,6 +1,5 @@
 public class Main {
     private static String example = "Hello, user! How are you?";
-
     private static String str1 = "Java";
     private static String str2 = "JAVA";
     private static String str3 = "C#";
