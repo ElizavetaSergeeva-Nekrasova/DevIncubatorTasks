@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
 public class TextProcessor {
-
     public static String appendText(String text, String append) {
         String result = text + append;
         return result;
