@@ -1,12 +1,11 @@
 public enum DaysOfWeek {
-    MONDAY ("MON", false)
-    , TUESDAY ("TUE", false)
-    , WEDNESDAY ("WED", false)
-    , THURSDAY ("THU", false)
-    , FRIDAY ("FRI", false)
-    , SATURDAY ("SUT", true)
-    , SUNDAY ("SUN", true)
-    ;
+    MONDAY ("MON", false),
+    TUESDAY ("TUE", false),
+    WEDNESDAY ("WED", false),
+    THURSDAY ("THU", false),
+    FRIDAY ("FRI", false),
+    SATURDAY ("SUT", true),
+    SUNDAY ("SUN", true);
 
     public String getAbbreviation() {
         return abbreviation;
