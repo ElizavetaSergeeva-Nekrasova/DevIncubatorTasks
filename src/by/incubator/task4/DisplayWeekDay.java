@@ -1,3 +1,5 @@
+package by.incubator.task4;
+
 import java.util.Scanner;
 
 public class DisplayWeekDay {
