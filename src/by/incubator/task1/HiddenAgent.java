@@ -2,7 +2,6 @@ package by.incubator.task1;
 
 public class HiddenAgent {
     public static void main(String[] args) {
-
         Class<HiddenAgent> hiddenAgentClass = HiddenAgent.class;
         showInfoAboutClassLoaderAndHisParents(hiddenAgentClass);
 
