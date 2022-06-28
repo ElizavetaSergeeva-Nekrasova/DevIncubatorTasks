@@ -171,7 +171,6 @@ public class TextProcessor {
             array[i] = (array[i] == null) ? ("String is empty") : (array[i]);
         }
     }
-
 }
 
 
