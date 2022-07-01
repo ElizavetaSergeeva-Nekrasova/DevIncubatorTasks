@@ -5,6 +5,7 @@ public class Main {
     static Horse horse;
     static Kangaroo kangaroo;
     static Dragonfly dragonfly;
+
     public static void main(String[] args) {
         createArrayOfAnimals();
         createThreeAnimals();
