@@ -1,4 +1,4 @@
-package by.incubator.test6;
+package by.incubator.task6;
 
 public class Student {
     private static int studentsCount;

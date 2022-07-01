@@ -1,10 +1,11 @@
-package by.incubator.test6;
+package by.incubator.task6;
 
 import java.util.Scanner;
 
 public class Main {
     static int arrayDimension;
     static double average;
+
     public static void main(String[] args) {
         arrayDimension = getArrayDimension();
         Student[] students = getStudentsArray();
