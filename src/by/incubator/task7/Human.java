@@ -1,9 +1,9 @@
 package by.incubator.task7;
 
 public class Human {
-    int age;
-    String name;
-    String surname;
+    private int age;
+    private String name;
+    private String surname;
 
     public Human(int age, String name, String surname) {
         this.age = age;
