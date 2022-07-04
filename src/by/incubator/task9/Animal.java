@@ -1,9 +1,9 @@
 package by.incubator.task9;
 
 abstract class Animal implements Voiceable, Moveable, Starveble {
-    String name;
-    int footNumber;
-    boolean hasMustache;
+    private String name;
+    private int footNumber;
+    private boolean hasMustache;
 
     public Animal(String name, int footNumber, boolean hasMustache) {
         this.name = name;

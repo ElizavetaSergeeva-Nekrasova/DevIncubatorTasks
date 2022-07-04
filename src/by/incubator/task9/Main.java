@@ -1,10 +1,10 @@
 package by.incubator.task9;
 
 public class Main {
-    static Animal[] herd;
-    static Horse horse;
-    static Kangaroo kangaroo;
-    static Dragonfly dragonfly;
+    private static Animal[] herd;
+    private static Horse horse;
+    private static Kangaroo kangaroo;
+    private static Dragonfly dragonfly;
 
     public static void main(String[] args) {
         createArrayOfAnimals();
