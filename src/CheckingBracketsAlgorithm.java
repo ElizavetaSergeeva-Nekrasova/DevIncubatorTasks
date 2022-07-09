@@ -9,10 +9,8 @@ public class CheckingBracketsAlgorithm {
             if (isLeftBracket(s.charAt(i))) {
                 deque.addFirst(s.charAt(i));
             }
-
             if (isRightBracket(s.charAt(i))) {
                 deque.addLast(s.charAt(i));
-
                 if (isPair(deque.getFirst(), deque.getLast())) {
                     deque.removeFirst();
                     deque.removeLast();
