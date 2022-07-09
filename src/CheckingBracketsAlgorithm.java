@@ -3,7 +3,7 @@ import java.util.LinkedList;
 public class CheckingBracketsAlgorithm {
 
     public static boolean checkingBracketsAlgorithm(String s) {
-        LinkedList<Character> deque = new LinkedList<>();
+        LinkedList<Character> deque = new LinkedList<Character>();
 
         for (int i = 0; i < s.length(); i++) {
             if (isLeftBracket(s.charAt(i))) {
