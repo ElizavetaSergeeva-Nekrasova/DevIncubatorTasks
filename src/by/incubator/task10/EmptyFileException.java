@@ -1,7 +1,7 @@
 package by.incubator.task10;
 
 public class EmptyFileException extends Exception{
-    String filePath;
+    private String filePath;
 
     public EmptyFileException(String message, String filePath) {
         super(message);
