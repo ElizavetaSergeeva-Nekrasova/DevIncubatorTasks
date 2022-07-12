@@ -1,20 +1,23 @@
 package by.incubator.task13;
 
+import java.util.List;
 import java.util.Scanner;
 
 public class JosephProblemWithArrayList {
-    private static MyArrayList<Integer> myArrayList;
+    private static List<Integer> myList;
     private static int warriorsNumber;
     private static int killInterval;
 
-    public static Integer getLastSurvivorNumber() {
+    public static Integer getLastSurvivorNumber(List<Integer> list) {
+        myList = list;
+
         getNumbers();
 
         initializeArrayList();
 
         removeWarriors();
 
-        return myArrayList.get(0);
+        return myList.get(0);
     }
 
     private static void getNumbers() {
@@ -46,9 +49,9 @@ public class JosephProblemWithArrayList {
     }
 
     private static void initializeArrayList() {
-        myArrayList = new MyArrayList<>();
+
         for (int i = 1; i <= warriorsNumber; i++) {
-            myArrayList.add(Integer.valueOf(i));
+            myList.add(Integer.valueOf(i));
         }
     }
 
@@ -58,15 +61,15 @@ public class JosephProblemWithArrayList {
         while (!isOnlyOneWarriorLeft()) {
             i = i + killInterval;
 
-            while (i >= myArrayList.size()) {
-                i = i - myArrayList.size();
+            while (i >= myList.size()) {
+                i = i - myList.size();
             }
 
-            myArrayList.remove(i);
+            myList.remove(i);
         }
     }
 
     private static boolean isOnlyOneWarriorLeft() {
-        return myArrayList.size() == 1;
+        return myList.size() == 1;
     }
 }
