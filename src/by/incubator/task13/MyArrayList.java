@@ -8,10 +8,11 @@ import java.util.ListIterator;
 public class MyArrayList<T> implements List<T> {
     private Object[] arrayOfElements;
     private int size;
-    private int capacity = DEFAULT_CAPACITY;
+    private int capacity;
     private static final int DEFAULT_CAPACITY = 10;
 
     public MyArrayList() {
+        capacity = DEFAULT_CAPACITY;
         this.arrayOfElements = new Object[capacity];
     }
 
@@ -47,7 +48,9 @@ public class MyArrayList<T> implements List<T> {
 
     @Override
     public void add(int index, T element) {
-        if ((double)size / (double) capacity < 0.7) {
+        double loadFactor = (double) size / (double) capacity;
+
+        if (loadFactor < 0.7) {
             addElement(index, element);
         } else {
             capacity = ((capacity * 3) / 2) + 1;
