@@ -51,7 +51,6 @@ public class Main {
                 people) {
             System.out.println(person);
         }
-
         System.out.println("-------------------------");
     }
 }
