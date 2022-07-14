@@ -1,18 +1,16 @@
 package by.incubator.task14;
 
 import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
 public class MyHashMap<K, V> implements Map<K, V> {
-    Node<K, V>[] table;
+    private Node<K, V>[] table;
     private int size;
     private int capacity;
     private double loadFactor;
-    private double threshold = capacity * loadFactor;
-    private final int DEFAULT_CAPACITY = 16;
-    private final double DEFAULT_LOAD_FACTOR = 0.75;
+    private static final int DEFAULT_CAPACITY = 16;
+    private static final double DEFAULT_LOAD_FACTOR = 0.75;
 
     public MyHashMap() {
         capacity = DEFAULT_CAPACITY;
@@ -77,6 +75,12 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
     @Override
     public V put(K key, V value) {
+        double threshold = capacity * loadFactor;
+
+        if (size >= threshold) {
+            increaseAndRefillTable();
+        }
+
         int hash = hash(key);
         int indexFor = indexFor(hash, capacity);
 
@@ -94,7 +98,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
             return null;
         }
 
-        Node nodeToRemove = removeIfExists((K) key, hash, index);
+        Node<K, V> nodeToRemove = removeIfExists((K) key, hash, index);
 
         if (nodeToRemove == null) {
             return null;
@@ -135,12 +139,12 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return (node = getNode((K) key, hash(key))) == null ? defaultValue : node.value;
     }
 
-    static final int hash(Object key) {
+    private static final int hash(Object key) {
         int h;
         return (key == null) ? 0 : (h = key.hashCode()) ^ (h >>> 16);
     }
 
-    static int indexFor(int hash, int capacity) {
+    private static int indexFor(int hash, int capacity) {
         return hash & (capacity - 1);
     }
 
@@ -160,8 +164,8 @@ public class MyHashMap<K, V> implements Map<K, V> {
         size++;
     }
 
-    private Node createNode(K key, V value, int hash, Node next) {
-        return new Node<>(key, hash, value, next);
+    private Node<K, V> createNode(K key, V value, int hash, Node<K, V> next) {
+        return new Node<K, V>(key, hash, value, next);
     }
 
     private boolean putIfExists(K key, V value, int hash, int index) {
@@ -173,8 +177,8 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return true;
     }
 
-    private Node removeIfExists(K key, int hash, int index) {
-        Node node = table[index];
+    private Node<K, V> removeIfExists(K key, int hash, int index) {
+        Node<K, V> node = table[index];
 
         if (node.HASH == hash && node.KEY.equals(key)) {
             table[index] = node.next;
@@ -183,7 +187,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
 
         while (node.next != null) {
             if ((node.next.HASH == hash) && (node.next.KEY.equals(key))) {
-                Node nodeToRemove = node.next;
+                Node<K, V> nodeToRemove = node.next;
                 node.next = node.next.next;
                 return nodeToRemove;
             }
@@ -194,8 +198,8 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return null;
     }
 
-    private Node getNodeInList(K key, int hash, int index) {
-        Node node = table[index];
+    private Node<K, V> getNodeInList(K key, int hash, int index) {
+        Node<K, V> node = table[index];
 
         while (node != null) {
             if (node.HASH == hash && node.KEY.equals(key)) {
@@ -206,7 +210,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return null;
     }
 
-    private Node getNode(K key, int hash) {
+    private Node<K, V> getNode(K key, int hash) {
         int index = indexFor(hash, capacity);
 
         if (table[index] == null) {
@@ -214,5 +218,31 @@ public class MyHashMap<K, V> implements Map<K, V> {
         }
 
         return getNodeInList(key, hash, index);
+    }
+
+    private void increaseAndRefillTable() {
+        capacity = capacity * 2;
+
+        Node<K, V>[] oldTable = table;
+        Node<K, V>[] newTable = new Node[capacity];
+        table = newTable;
+
+        refillTable(oldTable);
+    }
+
+    private void refillTable(Node<K, V>[] oldTable) {
+        size = 0;
+        for (int i = 0; i < oldTable.length; i++) {
+            refillBucket(oldTable, i);
+        }
+    }
+
+    private void refillBucket(Node<K, V>[] oldTable, int i) {
+        Node<K, V> node = oldTable[i];
+
+        while (node != null) {
+            put(node.getKey(), node.getValue());
+            node = node.next;
+        }
     }
 }
