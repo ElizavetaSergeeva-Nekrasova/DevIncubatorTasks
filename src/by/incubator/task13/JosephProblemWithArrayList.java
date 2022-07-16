@@ -8,39 +8,32 @@ public class JosephProblemWithArrayList {
     private static int warriorsNumber;
     private static int killInterval;
 
-    public static Integer getLastSurvivorNumber(List<Integer> list) {
+    public static Integer getLastSurvivorNumber(List<Integer> list, Scanner scanner) {
         myList = list;
 
-        getNumbers();
-
+        getNumbers(scanner);
         initializeArrayList();
-
         removeWarriors();
 
         return myList.get(0);
     }
 
-    private static void getNumbers() {
-        getNumbersFromConsole();
+    private static void getNumbers(Scanner scanner) {
+        getNumbersFromConsole(scanner);
         if (isWrongNumbers()) {
             throw new IllegalArgumentException("Enter the numbers greater than one");
         }
     }
 
-    private static void getNumbersFromConsole() {
-        try (Scanner scanner = new Scanner(System.in)) {
-            System.out.println("Enter the number of warriors: ");
-            if (scanner.hasNextInt()) {
-                warriorsNumber = scanner.nextInt();
-            }
+    private static void getNumbersFromConsole(Scanner scanner) {
+        System.out.println("Enter the number of warriors: ");
+        if (scanner.hasNextInt()) {
+            warriorsNumber = scanner.nextInt();
+        }
 
-            System.out.println("Enter the frequency of kills: ");
-            if (scanner.hasNextInt()) {
-                killInterval = scanner.nextInt() - 1;
-            }
-
-        } catch (Exception e) {
-            e.printStackTrace();
+        System.out.println("Enter the frequency of kills: ");
+        if (scanner.hasNextInt()) {
+            killInterval = scanner.nextInt() - 1;
         }
     }
 
@@ -49,18 +42,15 @@ public class JosephProblemWithArrayList {
     }
 
     private static void initializeArrayList() {
-
         for (int i = 1; i <= warriorsNumber; i++) {
             myList.add(Integer.valueOf(i));
         }
     }
 
     private static void removeWarriors() {
-
         int i = 0;
         while (!isOnlyOneWarriorLeft()) {
             i = i + killInterval;
-
             while (i >= myList.size()) {
                 i = i - myList.size();
             }
