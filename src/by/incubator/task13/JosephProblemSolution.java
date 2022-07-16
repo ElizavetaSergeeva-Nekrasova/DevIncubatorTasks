@@ -3,7 +3,7 @@ package by.incubator.task13;
 import java.util.List;
 import java.util.Scanner;
 
-public class JosephProblemWithArrayList {
+public class JosephProblemSolution {
     private static List<Integer> myList;
     private static int warriorsNumber;
     private static int killInterval;
