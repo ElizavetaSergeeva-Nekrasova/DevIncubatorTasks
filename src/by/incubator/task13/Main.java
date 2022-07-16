@@ -8,8 +8,8 @@ public class Main {
         MyLinkedList<Integer> myLinkedList = new MyLinkedList<>();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.println(JosephProblemWithArrayList.getLastSurvivorNumber(myArrayList, scanner));
-        System.out.println(JosephProblemWithArrayList.getLastSurvivorNumber(myLinkedList, scanner));
+        System.out.println(JosephProblemSolution.getLastSurvivorNumber(myArrayList, scanner));
+        System.out.println(JosephProblemSolution.getLastSurvivorNumber(myLinkedList, scanner));
         scanner.close();
     }
 }
