@@ -66,7 +66,7 @@ public class MyHashSet<K> implements Set<K> {
 
     @Override
     public Iterator<K> iterator() {
-        return null;
+        return hashMap.keySet().iterator();
     }
 
     @Override

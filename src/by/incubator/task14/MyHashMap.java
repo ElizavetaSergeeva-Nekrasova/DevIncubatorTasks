@@ -84,9 +84,7 @@ public class MyHashMap<K, V> implements Map<K, V> {
         int hash = hash(key);
         int indexFor = indexFor(hash, capacity);
 
-        putElement(key, value, hash, indexFor);
-
-        return value;
+        return putElement(key, value, hash, indexFor);
     }
 
     @Override
@@ -148,33 +146,37 @@ public class MyHashMap<K, V> implements Map<K, V> {
         return hash & (capacity - 1);
     }
 
-    private void putElement(K key, V value, int hash, int index) {
+    private V putElement(K key, V value, int hash, int index) {
 
         if (table[index] == null) {
             table[index] = createNode(key, value, hash, null);
             size++;
-            return;
+            return null;
         }
 
-        if (putIfExists(key, value, hash, index)) {
-            return;
+        V previousValue = putIfExists(key, value, hash, index);
+        if (previousValue != null) {
+            return previousValue;
         }
 
         table[index] = createNode(key, value, hash, table[index]);
         size++;
+        return null;
     }
 
     private Node<K, V> createNode(K key, V value, int hash, Node<K, V> next) {
         return new Node<K, V>(key, hash, value, next);
     }
 
-    private boolean putIfExists(K key, V value, int hash, int index) {
-        if (getNodeInList(key, hash, index) == null) {
-            return false;
+    private V putIfExists(K key, V value, int hash, int index) {
+        Node<K, V> node = getNodeInList(key, hash, index);
+        if (node == null) {
+            return null;
         }
 
-        getNodeInList(key, hash, index).value = value;
-        return true;
+        V previousValue = node.value;
+        node.value = value;
+        return previousValue;
     }
 
     private Node<K, V> removeIfExists(K key, int hash, int index) {
