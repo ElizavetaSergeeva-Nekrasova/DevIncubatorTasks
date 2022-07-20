@@ -1,6 +1,5 @@
 package by.incubator.task15;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -14,11 +13,11 @@ public class Main {
         Filter<Integer> integerFilter = integer -> integer >= 100;
         Predicate<Integer> integerPredicate = integer -> integer >= 100;
         Function<Integer, Integer> function = integer -> integer * integer;
-        Converter<Dog, Cat> dogToCatConverter = dog -> new Cat(dog.name, dog.age, dog.weight);
+        Converter<Dog, Cat> dogToCatConverter = dog -> new Cat(dog.getName(), dog.getAge(), dog.getWeight());
         Predicate<Integer> predicateParity = integer -> integer % 2 == 0;
         Consumer<String> consumer = string -> System.out.println("Hello, " + string + "!");
         Supplier<Integer> supplier = () -> {return (int) (Math.random() * nameList.size());};
-        Function<String, Integer> stringToOntConverter = Integer::parseInt;
+        Function<String, Integer> stringToIntConverter = Integer::parseInt;
         UnaryOperator<Integer> unaryOperator = integer -> integer * integer;
 
         Integer[] filteredArray = filterArray(integers, integerFilter);
@@ -32,18 +31,16 @@ public class Main {
 
         Dog dog = new Dog("Alisa", 5, 10.0);
         Cat cat = dogToCatConverter.convert(dog);
+        System.out.println(cat);
 
         showResultOfParityPredicate(predicateParity, 2);
         showResultOfParityPredicate(predicateParity, 3);
         showResultOfParityPredicate(predicateParity, 7);
 
         greetings(consumer, "Liza");
-
         outputRandomName(nameList, supplier);
-
-        System.out.println(convertString("5", stringToOntConverter));
-
-        System.out.println(squareNumber(10, unaryOperator));
+        showConvertedInt("5", stringToIntConverter);
+        showSquareNumber(10, unaryOperator);
     }
 
     private static List<String> createList() {
@@ -98,7 +95,15 @@ public class Main {
         return function.apply(s);
     }
 
+    private static void showConvertedInt(String s, Function<String, Integer> stringToIntConverter) {
+        System.out.println(convertString(s, stringToIntConverter));
+    }
+
     private static int squareNumber(int i, UnaryOperator<Integer> unaryOperator) {
         return unaryOperator.apply(i);
+    }
+
+    private static void showSquareNumber(int i, UnaryOperator<Integer> unaryOperator) {
+        System.out.println(squareNumber(i, unaryOperator));
     }
 }
