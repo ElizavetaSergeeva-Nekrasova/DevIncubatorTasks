@@ -15,6 +15,9 @@ public class Main {
 
         sortArrayUsingAgeComparable(people);
         showArray(people);
+
+        sortArrayUsingNameWithLambdas(people);
+        showArray(people);
     }
 
     private static Person[] createPersonArray() {
@@ -44,6 +47,10 @@ public class Main {
 
     private static void sortArrayUsingNameComparator(Person[] people) {
         Arrays.sort(people, new PersonNameComparator());
+    }
+
+    private static void sortArrayUsingNameWithLambdas(Person[] people) {
+        Arrays.sort(people, (x, y) -> x.getName().compareTo(y.getName()));
     }
 
     private static void showArray(Person[] people) {
