@@ -67,8 +67,9 @@ public class Main {
     }
 
     private static void displayFirstElement(List<String> stringList) {
-        System.out.println(getFirstElement(stringList));
+        System.out.println("First element: " + getFirstElement(stringList));
     }
+
 
     private static String getThirdElement(List<String> stringList) {
         return stringList
